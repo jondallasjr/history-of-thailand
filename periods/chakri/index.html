@@ -1,0 +1,1061 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Chakri Dynasty</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  color: #e74c3c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #c0392b;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo a:hover {
+  color: #ecf0f1;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* NAVIGATION STYLES */
+.site-nav {
+  background-color: #34495e;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
+}
+
+.nav-link.active {
+  border-bottom-color: #e74c3c;
+  color: #ecf0f1;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background-color: #2c3e50;
+  color: white;
+  margin-top: 60px;
+  padding-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.footer-section p {
+  color: #bdc3c7;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #bdc3c7;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e74c3c;
+}
+
+.footer-bottom {
+  border-top: 1px solid #34495e;
+  padding: 20px 0;
+  text-align: center;
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #34495e;
+  }
+
+  .site-nav.active {
+    max-height: 400px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-link {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .header-container {
+    padding: 12px 15px;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+}
+/* Historical Periods - Page CSS */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.page-intro {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.page-intro h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.periods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.period-card {
+  background: white;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.period-card:hover {
+  border-color: #e74c3c;
+  box-shadow: 0 8px 16px rgba(231, 76, 60, 0.15);
+  transform: translateY(-4px);
+}
+
+.period-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.period-card h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.period-card h2 a {
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.period-card h2 a:hover {
+  color: #e74c3c;
+}
+
+.period-era {
+  font-size: 0.9rem;
+  color: #e74c3c;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.period-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.period-link {
+  display: inline-block;
+  color: #e74c3c;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.period-link:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-color: #e74c3c;
+}
+
+.periods-timeline {
+  background: #f8f9fa;
+  padding: 50px 30px;
+  border-radius: 8px;
+  margin-top: 60px;
+}
+
+.periods-timeline h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.timeline-visual {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-visual::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #bdc3c7;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: 0;
+  text-align: right;
+  margin-right: auto;
+  width: calc(50% - 30px);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: auto;
+  text-align: left;
+  width: calc(50% - 30px);
+}
+
+.timeline-dot {
+  width: 24px;
+  height: 24px;
+  background-color: #e74c3c;
+  border: 4px solid white;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 0 3px #ecf0f1;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.timeline-content p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .page-intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .periods-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .periods-timeline {
+    padding: 40px 20px;
+  }
+
+  .periods-timeline h2 {
+    font-size: 1.6rem;
+  }
+
+  .timeline-visual::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 60px;
+    margin-right: 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  .timeline-dot {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 20px 15px;
+  }
+
+  .page-intro h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .period-card {
+    padding: 20px;
+  }
+
+  .period-icon {
+    font-size: 2.5rem;
+  }
+
+  .periods-timeline {
+    padding: 30px 15px;
+  }
+}
+
+/* Chakri Dynasty - Page CSS */
+.chakri-content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #e74c3c;
+  padding-bottom: 15px;
+}
+
+.content-section p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.highlight-item {
+  background: #f8f9fa;
+  border-left: 4px solid #e74c3c;
+  padding: 20px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.1);
+  transform: translateX(4px);
+}
+
+.highlight-item h4 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.highlight-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.timeline-section {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.chakri-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 30px;
+  position: relative;
+  padding-left: 40px;
+}
+
+.chakri-timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #e74c3c, #bdc3c7);
+}
+
+.timeline-entry {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: -32px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid #e74c3c;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-year {
+  font-weight: 700;
+  color: #e74c3c;
+  font-size: 1.1rem;
+  min-width: 100px;
+}
+
+.timeline-event {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .highlights {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .timeline-section {
+    padding: 30px 20px;
+  }
+
+  .chakri-timeline {
+    padding-left: 30px;
+  }
+
+  .timeline-entry {
+    gap: 20px;
+  }
+
+  .timeline-entry::before {
+    left: -24px;
+  }
+
+  .timeline-year {
+    min-width: 80px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .content-section p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .timeline-section {
+    padding: 20px 15px;
+  }
+
+  .chakri-timeline {
+    padding-left: 25px;
+  }
+
+  .timeline-entry {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .timeline-entry::before {
+    left: -20px;
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+
+  .timeline-year {
+    min-width: 70px;
+    font-size: 0.95rem;
+  }
+
+  .timeline-event {
+    font-size: 0.9rem;
+  }
+}.chakri-content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #e74c3c;
+  padding-bottom: 15px;
+}
+
+.content-section p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.highlight-item {
+  background: #f8f9fa;
+  border-left: 4px solid #e74c3c;
+  padding: 20px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.1);
+  transform: translateX(4px);
+}
+
+.highlight-item h4 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.highlight-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.timeline-section {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.chakri-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 30px;
+  position: relative;
+  padding-left: 40px;
+}
+
+.chakri-timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #e74c3c, #bdc3c7);
+}
+
+.timeline-entry {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: -32px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid #e74c3c;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-year {
+  font-weight: 700;
+  color: #e74c3c;
+  font-size: 1.1rem;
+  min-width: 100px;
+}
+
+.timeline-event {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .highlights {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .timeline-section {
+    padding: 30px 20px;
+  }
+
+  .chakri-timeline {
+    padding-left: 30px;
+  }
+
+  .timeline-entry {
+    gap: 20px;
+  }
+
+  .timeline-entry::before {
+    left: -24px;
+  }
+
+  .timeline-year {
+    min-width: 80px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .content-section p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .timeline-section {
+    padding: 20px 15px;
+  }
+
+  .chakri-timeline {
+    padding-left: 25px;
+  }
+
+  .timeline-entry {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .timeline-entry::before {
+    left: -20px;
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+
+  .timeline-year {
+    min-width: 70px;
+    font-size: 0.95rem;
+  }
+
+  .timeline-event {
+    font-size: 0.9rem;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/history-of-thailand/">History of Thailand</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header><nav class="site-nav" id="siteNav">
+  <ul class="nav-list">
+    <li><a href="/history-of-thailand/" class="nav-link">Home</a></li>
+    <li><a href="/history-of-thailand/timeline" class="nav-link">Timeline</a></li>
+    <li><a href="/history-of-thailand/periods" class="nav-link">Periods</a></li>
+    <li><a href="/history-of-thailand/figures" class="nav-link">Figures</a></li>
+    <li><a href="/history-of-thailand/culture" class="nav-link">Culture</a></li>
+    <li><a href="/history-of-thailand/resources" class="nav-link">Resources</a></li>
+    <li><a href="/history-of-thailand/about" class="nav-link">About</a></li>
+    <li><a href="/history-of-thailand/contact" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
+<script>
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const siteNav = document.getElementById('siteNav');
+  
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+    });
+  }
+</script><div class="page-container">
+  <div class="page-intro">
+    <h1>Chakri Dynasty</h1>
+    <p class="intro-text">Thailand's current ruling dynasty (1782-present), encompassing modernization, colonial pressures, and evolution into constitutional monarchy.</p>
+  </div>
+
+  <div class="chakri-content">
+    <section class="content-section">
+      <h2>Overview</h2>
+      <p>The Chakri Dynasty, established in 1782 by General Chakri (later crowned Rama I), represents one of the world's longest-reigning monarchical lines. For over two centuries, the dynasty has navigated Thailand through periods of extraordinary transformation, from absolute monarchy to constitutional government, while maintaining cultural continuity and national independence during the colonial era.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>Early Chakri Period (1782-1868)</h2>
+      <p>Rama I founded the dynasty following the fall of Thonburi, establishing Bangkok as the new capital. He reorganized the government, codified laws, and rebuilt the Buddhist sangha. His successors—Rama II and Rama III—continued consolidating power and managing relations with neighboring kingdoms, particularly as European colonial powers expanded their influence in Southeast Asia.</p>
+      <div class="highlights">
+        <div class="highlight-item">
+          <h4>Rama I (1782-1809)</h4>
+          <p>Founder of the dynasty and Bangkok; established governmental structures and legal codes</p>
+        </div>
+        <div class="highlight-item">
+          <h4>Rama II (1809-1824)</h4>
+          <p>Promoted arts and literature; maintained diplomatic relations with Western powers</p>
+        </div>
+        <div class="highlight-item">
+          <h4>Rama III (1824-1851)</h4>
+          <p>Strengthened military defenses; expanded administrative control over peripheral regions</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Modernization Era (1868-1910)</h2>
+      <p>Rama IV (Mongkut, r. 1851-1868) initiated Thailand's modernization by adopting Western technology and administrative practices while preserving Thai sovereignty. Rama V (Chulalongkorn, r. 1868-1910) accelerated reforms, establishing railroads, telegraph systems, and modern educational institutions. Facing pressure from British and French colonial powers, both monarchs skillfully maintained Thai independence through diplomatic negotiation.</p>
+      <div class="highlights">
+        <div class="highlight-item">
+          <h4>Technological Advancement</h4>
+          <p>Introduction of railroads, telecommunications, and modern infrastructure</p>
+        </div>
+        <div class="highlight-item">
+          <h4>Administrative Reforms</h4>
+          <p>Centralization of government; creation of modern bureaucratic structures</p>
+        </div>
+        <div class="highlight-item">
+          <h4>Territorial Adjustments</h4>
+          <p>Strategic territorial cessions to French Indochina and British Burma to preserve independence</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>20th Century Transitions (1910-1973)</h2>
+      <p>Rama VI and VII navigated the post-WWI era and the global economic crisis. The 1932 Revolution transformed Thailand into a constitutional monarchy, though the transition proved turbulent. Rama VIII (Ananda Mahidol) ascended as a child, and his mysterious death in 1946 marked a turning point. Rama IX (Bhumibol Adulyadej, r. 1946-2016) became the world's longest-reigning monarch, guiding Thailand through the Cold War, multiple constitutions, and numerous political upheavals.</p>
+      <div class="highlights">
+        <div class="highlight-item">
+          <h4>1932 Constitutional Revolution</h4>
+          <p>Transition from absolute to constitutional monarchy; establishment of first constitution</p>
+        </div>
+        <div class="highlight-item">
+          <h4>WWII Period</h4>
+          <p>Complex diplomatic navigation; Thailand emerged as independent nation post-war</p>
+        </div>
+        <div class="highlight-item">
+          <h4>Cold War Stability</h4>
+          <p>Rama IX provided political continuity amidst regional conflicts and internal divisions</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Contemporary Era (1973-Present)</h2>
+      <p>The period from 1973 onwards witnessed significant social and political transformation. Democratic uprisings alternated with military governance. King Bhumibol Adulyadej became deeply revered for his moral authority and commitment to the Thai people, exemplified through extensive royal projects addressing rural development, environmental conservation, and social welfare. The death of Rama IX in October 2016 marked the end of an era. His son, Maha Vajiralongkorn, ascended as Rama X, continuing the dynasty's role in contemporary Thailand while addressing new challenges of globalization and social change.</p>
+      <div class="highlights">
+        <div class="highlight-item">
+          <h4>Democratic Movements</h4>
+          <p>1973 and 1992 popular uprisings; ongoing evolution of constitutional governance</p>
+        </div>
+        <div class="highlight-item">
+          <h4>Royal Development Projects</h4>
+          <p>Extensive initiatives improving rural quality of life and environmental protection</p>
+        </div>
+        <div class="highlight-item">
+          <h4>Succession (2016)</h4>
+          <p>Transition to Rama X; continuation of Chakri Dynasty into third century</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section timeline-section">
+      <h2>Chakri Dynasty Timeline</h2>
+      <div class="chakri-timeline">
+        <div class="timeline-entry">
+          <div class="timeline-year">1782</div>
+          <div class="timeline-event">Rama I establishes Bangkok and founds Chakri Dynasty</div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-year">1851-1868</div>
+          <div class="timeline-event">Rama IV (Mongkut) begins modernization; maintains Thai independence</div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-year">1868-1910</div>
+          <div class="timeline-event">Rama V (Chulalongkorn) accelerates reforms; establishes modern infrastructure</div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-year">1932</div>
+          <div class="timeline-event">Constitutional Revolution transforms Thailand into constitutional monarchy</div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-year">1946-2016</div>
+          <div class="timeline-event">Rama IX (Bhumibol Adulyadej) becomes world's longest-reigning monarch</div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-year">2016-Present</div>
+          <div class="timeline-event">Rama X (Maha Vajiralongkorn) ascends; dynasty enters third century</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Legacy and Significance</h2>
+      <p>The Chakri Dynasty represents the continuity of Thai civilization through periods of extraordinary change. Unlike neighboring nations that experienced colonization, Thailand maintained independence through the wisdom and adaptability of its monarchs. The dynasty's evolution from absolute monarchy to constitutional governance reflects broader Thai values of stability, respect for institutional authority, and gradual reform. Today, the Chakri Dynasty remains central to Thai national identity, serving as a symbol of Thai sovereignty, cultural preservation, and continuity amidst global change.</p>
+    </section>
+  </div>
+</div><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>History of Thailand</h3>
+        <p>Exploring Thailand's rich cultural heritage and historical journey from ancient kingdoms to modern times.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/history-of-thailand/timeline">Timeline</a></li>
+          <li><a href="/history-of-thailand/periods">Historical Periods</a></li>
+          <li><a href="/history-of-thailand/figures">Influential Figures</a></li>
+          <li><a href="/history-of-thailand/culture">Cultural Heritage</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/history-of-thailand/resources">Learning Resources</a></li>
+          <li><a href="/history-of-thailand/about">About This Site</a></li>
+          <li><a href="/history-of-thailand/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 History of Thailand. All rights reserved.</p>
+    </div>
+  </div>
+</footer></body></html>
