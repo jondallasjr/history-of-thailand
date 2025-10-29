@@ -1,0 +1,980 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>King Rama V (Chulalongkorn)</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  color: #e74c3c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #c0392b;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo a:hover {
+  color: #ecf0f1;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* NAVIGATION STYLES */
+.site-nav {
+  background-color: #34495e;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
+}
+
+.nav-link.active {
+  border-bottom-color: #e74c3c;
+  color: #ecf0f1;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background-color: #2c3e50;
+  color: white;
+  margin-top: 60px;
+  padding-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.footer-section p {
+  color: #bdc3c7;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #bdc3c7;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e74c3c;
+}
+
+.footer-bottom {
+  border-top: 1px solid #34495e;
+  padding: 20px 0;
+  text-align: center;
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #34495e;
+  }
+
+  .site-nav.active {
+    max-height: 400px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-link {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .header-container {
+    padding: 12px 15px;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+}
+/* Historical Figures - Page CSS */
+.figures-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.figures-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.figures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.figure-card {
+  background: white;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.figure-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.figure-image-wrapper {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.figure-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.figure-card:hover .figure-image {
+  transform: scale(1.05);
+}
+
+.figure-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.figure-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.figure-era {
+  font-size: 0.95rem;
+  color: #e74c3c;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.figure-description {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.figure-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  display: inline-block;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.figure-link {
+  color: #e74c3c;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 10px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.figure-link:hover {
+  border-bottom-color: #e74c3c;
+}
+
+.figures-info {
+  background-color: #f8f9fa;
+  padding: 40px;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+}
+
+.figures-info h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.figures-info p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.figures-info p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .figures-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .figures-info {
+    padding: 30px 20px;
+  }
+
+  .figures-info h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .figures-main {
+    padding: 20px 15px;
+  }
+
+  .page-header {
+    margin-bottom: 40px;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .figure-content {
+    padding: 20px;
+  }
+
+  .figure-title {
+    font-size: 1.25rem;
+  }
+
+  .figure-highlights {
+    gap: 8px;
+  }
+
+  .highlight {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
+
+/* King Rama V (Chulalongkorn) - Page CSS */
+.figure-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.figure-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.figure-detail-image-wrapper {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.figure-image-placeholder {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.figure-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.figure-detail-meta {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.meta-item:last-child {
+  margin-bottom: 0;
+}
+
+.meta-label {
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-value {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.figure-detail-content {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.figure-detail-content h2 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  border-bottom: 3px solid #e74c3c;
+  padding-bottom: 10px;
+}
+
+.figure-detail-content h2:first-child {
+  margin-top: 0;
+}
+
+.figure-detail-content p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.reform-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.reform-list li {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 25px;
+  position: relative;
+}
+
+.reform-list li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.reform-list strong {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .figure-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .figure-detail-image-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .figure-detail {
+    gap: 40px;
+  }
+
+  .figure-detail-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .figure-detail-content p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .figure-detail-image-wrapper {
+    height: 250px;
+  }
+
+  .figure-detail-meta {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .figures-main {
+    padding: 20px 15px;
+  }
+
+  .figure-detail-grid {
+    gap: 25px;
+  }
+
+  .figure-detail-image-wrapper {
+    height: 200px;
+    border-radius: 6px;
+  }
+
+  .figure-detail-content h2 {
+    font-size: 1.25rem;
+    margin-top: 15px;
+    margin-bottom: 12px;
+  }
+
+  .figure-detail-content p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .figure-highlights {
+    gap: 8px;
+  }
+
+  .highlight {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}.figure-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.figure-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.figure-detail-image-wrapper {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.figure-image-placeholder {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.figure-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.figure-detail-meta {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.meta-item:last-child {
+  margin-bottom: 0;
+}
+
+.meta-label {
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-value {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.figure-detail-content {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.figure-detail-content h2 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  border-bottom: 3px solid #e74c3c;
+  padding-bottom: 10px;
+}
+
+.figure-detail-content h2:first-child {
+  margin-top: 0;
+}
+
+.figure-detail-content p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.reform-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.reform-list li {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 25px;
+  position: relative;
+}
+
+.reform-list li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.reform-list strong {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .figure-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .figure-detail-image-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .figure-detail {
+    gap: 40px;
+  }
+
+  .figure-detail-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .figure-detail-content p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .figure-detail-image-wrapper {
+    height: 250px;
+  }
+
+  .figure-detail-meta {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .figures-main {
+    padding: 20px 15px;
+  }
+
+  .figure-detail-grid {
+    gap: 25px;
+  }
+
+  .figure-detail-image-wrapper {
+    height: 200px;
+    border-radius: 6px;
+  }
+
+  .figure-detail-content h2 {
+    font-size: 1.25rem;
+    margin-top: 15px;
+    margin-bottom: 12px;
+  }
+
+  .figure-detail-content p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .figure-highlights {
+    gap: 8px;
+  }
+
+  .highlight {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/history-of-thailand/">History of Thailand</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header><nav class="site-nav" id="siteNav">
+  <ul class="nav-list">
+    <li><a href="/history-of-thailand/" class="nav-link">Home</a></li>
+    <li><a href="/history-of-thailand/timeline" class="nav-link">Timeline</a></li>
+    <li><a href="/history-of-thailand/periods" class="nav-link">Periods</a></li>
+    <li><a href="/history-of-thailand/figures" class="nav-link">Figures</a></li>
+    <li><a href="/history-of-thailand/culture" class="nav-link">Culture</a></li>
+    <li><a href="/history-of-thailand/resources" class="nav-link">Resources</a></li>
+    <li><a href="/history-of-thailand/about" class="nav-link">About</a></li>
+    <li><a href="/history-of-thailand/contact" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
+<script>
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const siteNav = document.getElementById('siteNav');
+  
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+    });
+  }
+</script><div class="figures-main">
+  <div class="page-header">
+    <h1>King Rama V (Chulalongkorn)</h1>
+    <p class="page-subtitle">Modernizing Thai king (r. 1868-1910) who preserved Thailand's independence during colonialism through reform and diplomatic skill.</p>
+  </div>
+
+  <div class="figures-container">
+    <section class="figure-detail">
+      <div class="figure-detail-grid">
+        <div class="figure-detail-image-wrapper">
+          <div class="figure-image-placeholder">King Rama V</div>
+        </div>
+        <div class="figure-detail-info">
+          <div class="figure-detail-meta">
+            <div class="meta-item">
+              <span class="meta-label">Reign:</span>
+              <span class="meta-value">1868-1910</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Period:</span>
+              <span class="meta-value">Chakri Dynasty</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Era Name:</span>
+              <span class="meta-value">Chakri Dynasty (Bangkok Period)</span>
+            </div>
+          </div>
+          <div class="figure-highlights">
+            <span class="highlight">Modernization</span>
+            <span class="highlight">Diplomacy</span>
+            <span class="highlight">Independence</span>
+            <span class="highlight">Reform</span>
+            <span class="highlight">Infrastructure</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="figure-detail-content">
+        <h2>Early Life and Ascension</h2>
+        <p>Born in 1853 as Prince Chulalongkorn, the future King Rama V was educated in both traditional Thai and Western learning. He ascended to the throne at just fifteen years old following his father King Rama IV's death. His youth and education prepared him uniquely for the challenges ahead, particularly the threat of European colonialism that engulfed Southeast Asia in the late 19th century.</p>
+
+        <h2>Preservation of Independence</h2>
+        <p>Rama V's greatest achievement was maintaining Thailand's independence during the height of European colonial expansion. While neighboring Burma, Malaya, and Indochina fell under French and British control, Thailand preserved its sovereignty through skilled diplomacy and strategic concessions. The king ceded territory to both France and Britain while maintaining Thailand's core territory and political independence.</p>
+        <p>His diplomatic acumen was extraordinary. Rather than resist colonialism militarily—a strategy that had failed elsewhere—Rama V understood the balance of power and negotiated from a position of strategic importance. Thailand became a buffer state between British and French colonial territories, and the king leveraged this position skillfully.</p>
+
+        <h2>Modernization and Reforms</h2>
+        <p>Recognizing that modernization was essential to competing with Western powers, Rama V initiated comprehensive reforms across Thai society:</p>
+        <ul class="reform-list">
+          <li><strong>Administrative Centralization:</strong> Restructured the Thai government with a cabinet system and centralized bureaucracy based on Western models</li>
+          <li><strong>Military Modernization:</strong> Reformed the Thai military with modern training, equipment, and organization</li>
+          <li><strong>Infrastructure Development:</strong> Built the first railway lines, modernized communication systems, and expanded roads</li>
+          <li><strong>Legal Reform:</strong> Introduced new legal codes and abolished slavery, a significant social transformation</li>
+          <li><strong>Educational Reform:</strong> Established modern educational institutions and sent Thai students abroad for advanced training</li>
+          <li><strong>Economic Development:</strong> Encouraged foreign investment and development while protecting Thai interests</li>
+        </ul>
+
+        <h2>Personal Life and Legacy</h2>
+        <p>Rama V was deeply influenced by Western culture during his travels abroad, yet remained firmly committed to Thai traditions and Buddhism. He had numerous wives and children, fathering many heirs who would influence Thai politics for generations. His favorite and most influential son was Prince Vajiravudh, who would become King Rama VI.</p>
+        <p>The king's reign lasted 42 years, making it one of the longest and most transformative in Thai history. He modernized Thailand while preserving its cultural identity and independence—a balance that few rulers have achieved successfully. His death in 1910 marked the end of an era, but the institutions and infrastructure he created remained the foundation of modern Thailand.</p>
+
+        <h2>Historical Significance</h2>
+        <p>King Rama V is remembered as the architect of modern Thailand. His reign represents a critical juncture in Thai history where the nation successfully navigated the perils of colonialism. Unlike many other Asian nations, Thailand did not experience direct colonial rule, a distinction largely attributable to Rama V's vision and leadership.</p>
+        <p>His legacy extends beyond politics. The king was a modernizer who understood that progress did not require abandoning tradition. He brought Thailand into the modern world while maintaining Thai sovereignty, culture, and Buddhist traditions. Statues of Rama V stand throughout Thailand as monuments to a king who saved his nation's independence.</p>
+      </div>
+    </section>
+
+    <section class="figures-info">
+      <h2>Impact on Thai History</h2>
+      <p>Rama V's reign fundamentally transformed Thailand from a feudal kingdom into a modern nation-state. His reforms in governance, military, infrastructure, and law created the foundation for Thailand's continued development. More importantly, his diplomatic genius preserved Thai independence at a time when the entire region was being colonized.</p>
+      <p>His approach to modernization—selectively adopting foreign innovations while preserving Thai culture and identity—became a model for Thailand's development strategy. This balance between tradition and modernity remains central to Thai national identity today.</p>
+    </section>
+  </div>
+</div><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>History of Thailand</h3>
+        <p>Exploring Thailand's rich cultural heritage and historical journey from ancient kingdoms to modern times.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/history-of-thailand/timeline">Timeline</a></li>
+          <li><a href="/history-of-thailand/periods">Historical Periods</a></li>
+          <li><a href="/history-of-thailand/figures">Influential Figures</a></li>
+          <li><a href="/history-of-thailand/culture">Cultural Heritage</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/history-of-thailand/resources">Learning Resources</a></li>
+          <li><a href="/history-of-thailand/about">About This Site</a></li>
+          <li><a href="/history-of-thailand/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 History of Thailand. All rights reserved.</p>
+    </div>
+  </div>
+</footer></body></html>
