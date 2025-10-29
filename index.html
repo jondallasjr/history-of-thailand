@@ -1,705 +1,781 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The History of Thailand - A Journey Through Time</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --thai-gold: #FFD700;
-            --thai-red: #C8102E;
-            --thai-blue: #2D2A4A;
-            --thai-cream: #F5E6D3;
-            --dark-text: #2C3E50;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-text);
-            overflow-x: hidden;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, var(--thai-red) 0%, var(--thai-blue) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(255, 255, 255, 0.03) 10px,
-                rgba(255, 255, 255, 0.03) 20px
-            );
-            animation: slide 20s linear infinite;
-        }
-
-        @keyframes slide {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-
-        .hero-content {
-            text-align: center;
-            color: white;
-            z-index: 1;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-20px); }
-            60% { transform: translateX(-50%) translateY(-10px); }
-        }
-
-        .scroll-indicator::before {
-            content: '↓';
-            font-size: 2rem;
-            color: white;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(45, 42, 74, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 2rem;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        nav.visible {
-            transform: translateY(0);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            color: var(--thai-gold);
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        /* Section Styling */
-        section {
-            margin-bottom: 4rem;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--thai-red);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--thai-gold), var(--thai-red));
-        }
-
-        .timeline-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-content {
-            width: 45%;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .timeline-date {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--thai-gold);
-            color: var(--thai-blue);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .timeline-content h3 {
-            color: var(--thai-red);
-            margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Era Cards */
-        .era-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .era-card {
-            background: linear-gradient(135deg, var(--thai-cream) 0%, white 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 5px solid var(--thai-gold);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-        .era-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .era-card h3 {
-            color: var(--thai-blue);
-            margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .era-card .date {
-            color: var(--thai-red);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Interactive Facts */
-        .facts-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .fact-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .fact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .fact-card:hover::before {
-            left: 100%;
-        }
-
-        .fact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .fact-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--thai-blue);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                flex-direction: column !important;
-                align-items: flex-start;
-                padding-left: 60px;
-            }
-
-            .timeline-content {
-                width: 100%;
-            }
-
-            .timeline-date {
-                left: 20px;
-                transform: translateX(0);
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background: white;
-            margin: 5% auto;
-            padding: 2rem;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 15px;
-            position: relative;
-            animation: slideDown 0.3s;
-        }
-
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .close {
-            position: absolute;
-            right: 1rem;
-            top: 1rem;
-            font-size: 2rem;
-            cursor: pointer;
-            color: var(--thai-red);
-        }
-
-        .close:hover {
-            color: var(--thai-blue);
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#timeline">Timeline</a></li>
-            <li><a href="#eras">Historical Eras</a></li>
-            <li><a href="#facts">Facts</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 data-aos="fade-up">The History of Thailand</h1>
-            <p data-aos="fade-up" data-aos-delay="200">สยาม - Land of Smiles, Kingdom of Heritage</p>
-            <p data-aos="fade-up" data-aos-delay="400" style="font-size: 1rem; opacity: 0.8;">
-                Discover over 700 years of rich history, culture, and resilience
-            </p>
-        </div>
-        <div class="scroll-indicator"></div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section id="timeline" class="container">
-        <h2 data-aos="fade-up">Historical Timeline</h2>
-        
-        <div class="timeline">
-            <div class="timeline-item" data-aos="fade-right">
-                <div class="timeline-content">
-                    <h3>Sukhothai Kingdom</h3>
-                    <p>The first Thai kingdom, considered the golden age of Thai culture. King Ramkhamhaeng created the Thai alphabet and established Buddhism as the national religion.</p>
-                </div>
-                <div class="timeline-date">1238-1438</div>
-            </div>
-
-            <div class="timeline-item" data-aos="fade-left">
-                <div class="timeline-content">
-                    <h3>Ayutthaya Kingdom</h3>
-                    <p>One of Southeast Asia's most powerful kingdoms, Ayutthaya became a thriving international trading hub and cultural center for over 400 years.</p>
-                </div>
-                <div class="timeline-date">1351-1767</div>
-            </div>
-
-            <div class="timeline-item" data-aos="fade-right">
-                <div class="timeline-content">
-                    <h3>Fall of Ayutthaya</h3>
-                    <p>The Burmese army destroyed Ayutthaya, burning the city and scattering its people. This marked a dark period but led to the rise of a new kingdom.</p>
-                </div>
-                <div class="timeline-date">1767</div>
-            </div>
-
-            <div class="timeline-item" data-aos="fade-left">
-                <div class="timeline-content">
-                    <h3>Thonburi Period</h3>
-                    <p>King Taksin established a new capital at Thonburi and reunified the kingdom after the fall of Ayutthaya.</p>
-                </div>
-                <div class="timeline-date">1767-1782</div>
-            </div>
-
-            <div class="timeline-item" data-aos="fade-right">
-                <div class="timeline-content">
-                    <h3>Rattanakosin Kingdom (Bangkok)</h3>
-                    <p>King Rama I founded the Chakri Dynasty and moved the capital to Bangkok. This era continues to the present day under the constitutional monarchy.</p>
-                </div>
-                <div class="timeline-date">1782-Present</div>
-            </div>
-
-            <div class="timeline-item" data-aos="fade-left">
-                <div class="timeline-content">
-                    <h3>Modernization Era</h3>
-                    <p>King Rama IV and V modernized Thailand, avoiding colonization through diplomatic relations and reforms while preserving independence.</p>
-                </div>
-                <div class="timeline-date">1851-1910</div>
-            </div>
-
-            <div class="timeline-item" data-aos="fade-right">
-                <div class="timeline-content">
-                    <h3>Name Change to Thailand</h3>
-                    <p>Siam officially changed its name to Thailand, meaning "Land of the Free," reflecting national pride and independence.</p>
-                </div>
-                <div class="timeline-date">1939</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Historical Eras Section -->
-    <section id="eras" class="container">
-        <h2 data-aos="fade-up">Major Historical Eras</h2>
-        
-        <div class="era-grid">
-            <div class="era-card" data-aos="zoom-in" data-aos-delay="100" onclick="openModal('sukhothai')">
-                <div class="date">1238-1438 CE</div>
-                <h3>Sukhothai Era</h3>
-                <p>The dawn of Thai civilization, where art, culture, and the Thai script were born. Known for its paternal governance and Buddhist art.</p>
-            </div>
-
-            <div class="era-card" data-aos="zoom-in" data-aos-delay="200" onclick="openModal('ayutthaya')">
-                <div class="date">1351-1767 CE</div>
-                <h3>Ayutthaya Era</h3>
-                <p>A cosmopolitan trading empire that rivaled European powers, blending cultures and establishing Thailand as a major Asian power.</p>
-            </div>
-
-            <div class="era-card" data-aos="zoom-in" data-aos-delay="300" onclick="openModal('rattanakosin')">
-                <div class="date">1782-Present</div>
-                <h3>Rattanakosin Era</h3>
-                <p>The current era of Thai history, marked by modernization, preservation of independence, and evolution into a constitutional monarchy.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interesting Facts Section -->
-    <section id="facts" class="container">
-        <h2 data-aos="fade-up">Fascinating Facts</h2>
-        
-        <div class="facts-container">
-            <div class="fact-card" data-aos="flip-left" data-aos-delay="100">
-                <div class="fact-icon">👑</div>
-                <h3>Never Colonized</h3>
-                <p>Thailand is the only Southeast Asian nation never colonized by European powers, maintaining independence through skilled diplomacy.</p>
-            </div>
-
-            <div class="fact-card" data-aos="flip-left" data-aos-delay="200">
-                <div class="fact-icon">✍️</div>
-                <h3>Thai Script</h3>
-                <p>Created by King Ramkhamhaeng the Great in 1283, the Thai alphabet is one of the world's most phonetically complete writing systems.</p>
-            </div>
-
-            <div class="fact-card" data-aos="flip-left" data-aos-delay="300">
-                <div class="fact-icon">🏛️</div>
-                <h3>Ayutthaya Glory</h3>
-                <p>At its peak, Ayutthaya was one of the world's largest cities with over 1 million inhabitants and magnificent golden temples.</p>
-            </div>
-
-            <div class="fact-card" data-aos="flip-left" data-aos-delay="400">
-                <div class="fact-icon">🙏</div>
-                <h3>Buddhism</h3>
-                <p>Buddhism has been the dominant religion for over 800 years, deeply influencing Thai culture, art, and daily life.</p>
-            </div>
-
-            <div class="fact-card" data-aos="flip-left" data-aos-delay="500">
-                <div class="fact-icon">🏰</div>
-                <h3>Grand Palace</h3>
-                <p>Built in 1782, Bangkok's Grand Palace complex served as the royal residence and remains the spiritual heart of the Thai kingdom.</p>
-            </div>
-
-            <div class="fact-card" data-aos="flip-left" data-aos-delay="600">
-                <div class="fact-icon">🎭</div>
-                <h3>Cultural Heritage</h3>
-                <p>Thai classical dance, music, and art forms have been preserved for centuries, passed down through royal patronage and dedication.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div id="modal-body"></div>
-        </div>
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>History of Thailand</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  color: #e74c3c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #c0392b;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo a:hover {
+  color: #ecf0f1;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* NAVIGATION STYLES */
+.site-nav {
+  background-color: #34495e;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
+}
+
+.nav-link.active {
+  border-bottom-color: #e74c3c;
+  color: #ecf0f1;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background-color: #2c3e50;
+  color: white;
+  margin-top: 60px;
+  padding-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.footer-section p {
+  color: #bdc3c7;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #bdc3c7;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e74c3c;
+}
+
+.footer-bottom {
+  border-top: 1px solid #34495e;
+  padding: 20px 0;
+  text-align: center;
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #34495e;
+  }
+
+  .site-nav.active {
+    max-height: 400px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-link {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .header-container {
+    padding: 12px 15px;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+}
+/* History of Thailand - Page CSS */
+.homepage {
+  width: 100%;
+}
+
+.hero {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.hero-content .subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #2c3e50;
+}
+
+.btn-secondary:hover {
+  background-color: #ecf0f1;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.featured-sections {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.featured-card {
+  background: white;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-color: #e74c3c;
+}
+
+.featured-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.featured-card p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.card-link {
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.card-link:hover {
+  color: #c0392b;
+  transform: translateX(4px);
+}
+
+.highlights {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  margin-top: 60px;
+}
+
+.highlights h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #2c3e50;
+}
+
+.highlights-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.highlight-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #e74c3c;
+}
+
+.highlight-item p {
+  color: #555;
+  line-height: 1.7;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-section > p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.cta-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlights-content {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+}.homepage {
+  width: 100%;
+}
+
+.hero {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.hero-content .subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #2c3e50;
+}
+
+.btn-secondary:hover {
+  background-color: #ecf0f1;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.featured-sections {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.featured-card {
+  background: white;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-color: #e74c3c;
+}
+
+.featured-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.featured-card p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.card-link {
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.card-link:hover {
+  color: #c0392b;
+  transform: translateX(4px);
+}
+
+.highlights {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  margin-top: 60px;
+}
+
+.highlights h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #2c3e50;
+}
+
+.highlights-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.highlight-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #e74c3c;
+}
+
+.highlight-item p {
+  color: #555;
+  line-height: 1.7;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-section > p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.cta-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlights-content {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/history-of-thailand/">History of Thailand</a>
     </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header><nav class="site-nav" id="siteNav">
+  <ul class="nav-list">
+    <li><a href="/history-of-thailand/" class="nav-link">Home</a></li>
+    <li><a href="/history-of-thailand/timeline" class="nav-link">Timeline</a></li>
+    <li><a href="/history-of-thailand/periods" class="nav-link">Periods</a></li>
+    <li><a href="/history-of-thailand/figures" class="nav-link">Figures</a></li>
+    <li><a href="/history-of-thailand/culture" class="nav-link">Culture</a></li>
+    <li><a href="/history-of-thailand/resources" class="nav-link">Resources</a></li>
+    <li><a href="/history-of-thailand/about" class="nav-link">About</a></li>
+    <li><a href="/history-of-thailand/contact" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
+<script>
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const siteNav = document.getElementById('siteNav');
+  
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+    });
+  }
+</script><main class="homepage">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>History of Thailand</h1>
+      <p class="subtitle">Discover Thailand's rich historical journey from ancient kingdoms through modern times</p>
+      <div class="cta-buttons">
+        <a href="/history-of-thailand/timeline" class="btn btn-primary">Explore Timeline</a>
+        <a href="/history-of-thailand/periods" class="btn btn-secondary">Historical Periods</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 History of Thailand | Educational Resource</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">Exploring the rich heritage of the Land of Smiles</p>
-    </footer>
+  <section class="featured-sections">
+    <div class="section-grid">
+      <article class="featured-card">
+        <h2>Historical Periods</h2>
+        <p>Journey through Thailand's distinct eras, from prehistoric times through the Chakri dynasty to the modern era.</p>
+        <a href="/history-of-thailand/periods" class="card-link">Learn More →</a>
+      </article>
 
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
+      <article class="featured-card">
+        <h2>Influential Figures</h2>
+        <p>Meet the kings, leaders, and cultural icons who shaped Thailand's destiny and left lasting legacies.</p>
+        <a href="/history-of-thailand/figures" class="card-link">Discover Figures →</a>
+      </article>
 
-        // Navbar show/hide on scroll
-        let lastScroll = 0;
-        const navbar = document.getElementById('navbar');
+      <article class="featured-card">
+        <h2>Cultural Heritage</h2>
+        <p>Explore the traditions, arts, and customs that define Thai culture and continue to thrive today.</p>
+        <a href="/history-of-thailand/culture" class="card-link">Explore Culture →</a>
+      </article>
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                navbar.classList.add('visible');
-            } else {
-                navbar.classList.remove('visible');
-            }
-            
-            lastScroll = currentScroll;
-        });
+      <article class="featured-card">
+        <h2>Timeline</h2>
+        <p>Browse key events and milestones that have shaped the nation from ancient times to the present day.</p>
+        <a href="/history-of-thailand/timeline" class="card-link">View Timeline →</a>
+      </article>
+    </div>
+  </section>
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+  <section class="highlights">
+    <h2>Key Highlights</h2>
+    <div class="highlights-content">
+      <div class="highlight-item">
+        <h3>Ancient Kingdoms</h3>
+        <p>Thailand's history spans thousands of years, with powerful kingdoms like Sukhothai and Ayutthaya establishing the cultural and political foundations of the nation.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>Chakri Dynasty</h3>
+        <p>Founded in 1782, the Chakri Dynasty has guided Thailand through modernization while preserving its rich cultural identity and traditions.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>Cultural Continuity</h3>
+        <p>Despite historical changes, Thai culture maintains deep connections to Buddhism, monarchy, and community values that have endured for centuries.</p>
+      </div>
+    </div>
+  </section>
 
-        // Modal functionality
-        const modalContent = {
-            sukhothai: {
-                title: 'Sukhothai Kingdom',
-                content: `
-                    <h3 style="color: var(--thai-red);">The Golden Age of Thai Civilization</h3>
-                    <p><strong>Period:</strong> 1238-1438 CE</p>
-                    <p><strong>Capital:</strong> Sukhothai (meaning "Dawn of Happiness")</p>
-                    
-                    <h4 style="margin-top: 1.5rem;">Key Achievements:</h4>
-                    <ul style="margin-left: 1.5rem; line-height: 2;">
-                        <li>Creation of the Thai alphabet by King Ramkhamhaeng</li>
-                        <li>Development of distinctive Thai art and architecture</li>
-                        <li>Establishment of Theravada Buddhism as state religion</li>
-                        <li>Paternal system of governance - "father governs children"</li>
-                        <li>The famous Ramkhamhaeng Stele, first Thai historical document</li>
-                    </ul>
-                    
-                    <p style="margin-top: 1rem;">Sukhothai is remembered as a period of peace, prosperity, and cultural flourishing that laid the foundation for Thai identity.</p>
-                `
-            },
-            ayutthaya: {
-                title: 'Ayutthaya Kingdom',
-                content: `
-                    <h3 style="color: var(--thai-red);">The Magnificent Trading Empire</h3>
-                    <p><strong>Period:</strong> 1351-1767 CE (417 years)</p>
-                    <p><strong>Capital:</strong> Ayutthaya (Island City)</p>
-                    
-                    <h4 style="margin-top: 1.5rem;">Highlights:</h4>
-                    <ul style="margin-left: 1.5rem; line-height: 2;">
-                        <li>One of the wealthiest cities in Asia, with over 1 million residents</li>
-                        <li>International trade hub connecting East and West</li>
-                        <li>33 kings from 5 dynasties ruled the kingdom</li>
-                        <li>Magnificent temples covered in gold</li>
-                        <li>Diplomatic relations with Louis XIV's France, Qing China, and others</li>
-                        <li>Advanced bureaucratic system and legal codes</li>
-                    </ul>
-                    
-                    <p style="margin-top: 1rem;">The kingdom fell to Burmese invasion in 1767, but its legacy influenced the subsequent Rattanakosin period profoundly.</p>
-                `
-            },
-            rattanakosin: {
-                title: 'Rattanakosin Era',
-                content: `
-                    <h3 style="color: var(--thai-red);">Modern Thailand</h3>
-                    <p><strong>Period:</strong> 1782 CE - Present</p>
-                    <p><strong>Capital:</strong> Bangkok (Krung Thep Maha Nakhon)</p>
-                    
-                    <h4 style="margin-top: 1.5rem;">Major Developments:</h4>
-                    <ul style="margin-left: 1.5rem; line-height: 2;">
-                        <li>Founded by King Rama I of the Chakri Dynasty</li>
-                        <li>Avoided colonization through strategic modernization</li>
-                        <li>Transition from absolute to constitutional monarchy (1932)</li>
-                        <li>Rapid economic development in 20th century</li>
-                        <li>Preservation of Thai culture while embracing modernity</li>
-                        <li>Ten monarchs have ruled, currently under King Rama X</li>
-                    </ul>
-                    
-                    <p style="margin-top: 1rem;">This era represents Thailand's successful navigation of the modern world while maintaining its unique cultural identity and independence.</p>
-                `
-            }
-        };
-
-        function openModal(era) {
-            const modal = document.getElementById('modal');
-            const modalBody = document.getElementById('modal-body');
-            const content = modalContent[era];
-            
-            modalBody.innerHTML = `
-                <h2 style="font-family: 'Playfair Display', serif; color: var(--thai-blue); margin-bottom: 1rem;">
-                    ${content.title}
-                </h2>
-                ${content.content}
-            `;
-            
-            modal.style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('modal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        // Parallax effect for hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero-content');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-                hero.style.opacity = 1 - scrolled / 700;
-            }
-        });
-    </script>
-</body>
-</html>
+  <section class="cta-section">
+    <h2>Dive Deeper</h2>
+    <p>Explore comprehensive resources about Thailand's history, culture, and influential figures.</p>
+    <div class="cta-links">
+      <a href="/history-of-thailand/resources" class="btn btn-primary">View Resources</a>
+      <a href="/history-of-thailand/about" class="btn btn-outline">About This Site</a>
+    </div>
+  </section>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>History of Thailand</h3>
+        <p>Exploring Thailand's rich cultural heritage and historical journey from ancient kingdoms to modern times.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/history-of-thailand/timeline">Timeline</a></li>
+          <li><a href="/history-of-thailand/periods">Historical Periods</a></li>
+          <li><a href="/history-of-thailand/figures">Influential Figures</a></li>
+          <li><a href="/history-of-thailand/culture">Cultural Heritage</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/history-of-thailand/resources">Learning Resources</a></li>
+          <li><a href="/history-of-thailand/about">About This Site</a></li>
+          <li><a href="/history-of-thailand/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 History of Thailand. All rights reserved.</p>
+    </div>
+  </div>
+</footer></body></html>
