@@ -1,0 +1,794 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Thai Culture & Heritage</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  color: #e74c3c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #c0392b;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo a:hover {
+  color: #ecf0f1;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* NAVIGATION STYLES */
+.site-nav {
+  background-color: #34495e;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
+}
+
+.nav-link.active {
+  border-bottom-color: #e74c3c;
+  color: #ecf0f1;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background-color: #2c3e50;
+  color: white;
+  margin-top: 60px;
+  padding-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.footer-section p {
+  color: #bdc3c7;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #bdc3c7;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e74c3c;
+}
+
+.footer-bottom {
+  border-top: 1px solid #34495e;
+  padding: 20px 0;
+  text-align: center;
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #34495e;
+  }
+
+  .site-nav.active {
+    max-height: 400px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-link {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .header-container {
+    padding: 12px 15px;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+}
+/* Thai Culture & Heritage - Page CSS */
+.culture-main {
+  min-height: 100vh;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #ecf0f1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.culture-intro {
+  background-color: #f8f9fa;
+  padding: 50px 20px;
+}
+
+.culture-intro p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.culture-grid {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.culture-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.culture-card {
+  background: white;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.culture-card:hover {
+  border-color: #e74c3c;
+  box-shadow: 0 8px 20px rgba(231, 76, 60, 0.15);
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.culture-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.culture-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.culture-details {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+
+.detail-block {
+  background: white;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-left: 5px solid #e74c3c;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.detail-block h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.detail-block p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.culture-timeline {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.culture-timeline h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.timeline-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.timeline-item {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+  padding: 25px;
+  border-radius: 8px;
+  border-top: 4px solid #e74c3c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.timeline-item p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .culture-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .culture-timeline h2 {
+    font-size: 1.5rem;
+  }
+
+  .detail-block {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 50px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .culture-intro {
+    padding: 30px 15px;
+  }
+
+  .culture-intro p {
+    font-size: 0.95rem;
+  }
+}.culture-main {
+  min-height: 100vh;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #ecf0f1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.culture-intro {
+  background-color: #f8f9fa;
+  padding: 50px 20px;
+}
+
+.culture-intro p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.culture-grid {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.culture-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.culture-card {
+  background: white;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.culture-card:hover {
+  border-color: #e74c3c;
+  box-shadow: 0 8px 20px rgba(231, 76, 60, 0.15);
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.culture-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.culture-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.culture-details {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+
+.detail-block {
+  background: white;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-left: 5px solid #e74c3c;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.detail-block h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.detail-block p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.culture-timeline {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.culture-timeline h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.timeline-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.timeline-item {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+  padding: 25px;
+  border-radius: 8px;
+  border-top: 4px solid #e74c3c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.timeline-item p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .culture-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .culture-timeline h2 {
+    font-size: 1.5rem;
+  }
+
+  .detail-block {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 50px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .culture-intro {
+    padding: 30px 15px;
+  }
+
+  .culture-intro p {
+    font-size: 0.95rem;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/history-of-thailand/">History of Thailand</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header><nav class="site-nav" id="siteNav">
+  <ul class="nav-list">
+    <li><a href="/history-of-thailand/" class="nav-link">Home</a></li>
+    <li><a href="/history-of-thailand/timeline" class="nav-link">Timeline</a></li>
+    <li><a href="/history-of-thailand/periods" class="nav-link">Periods</a></li>
+    <li><a href="/history-of-thailand/figures" class="nav-link">Figures</a></li>
+    <li><a href="/history-of-thailand/culture" class="nav-link">Culture</a></li>
+    <li><a href="/history-of-thailand/resources" class="nav-link">Resources</a></li>
+    <li><a href="/history-of-thailand/about" class="nav-link">About</a></li>
+    <li><a href="/history-of-thailand/contact" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
+<script>
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const siteNav = document.getElementById('siteNav');
+  
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+    });
+  }
+</script><main class="culture-main">
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Thai Culture & Heritage</h1>
+      <p class="hero-subtitle">Exploring Thailand's Rich Cultural Traditions, Arts, Beliefs, and Customs</p>
+    </div>
+  </section>
+
+  <section class="culture-intro">
+    <div class="container">
+      <p>Thailand's culture represents a remarkable synthesis of influences shaped by its unique historical journey. From ancient kingdoms to the modern era, Thai traditions have developed into a distinctive cultural identity characterized by deep spirituality, artistic excellence, and social harmony.</p>
+    </div>
+  </section>
+
+  <section class="culture-grid">
+    <div class="container">
+      <div class="culture-cards">
+        <article class="culture-card">
+          <div class="card-icon">🏛️</div>
+          <h2>Buddhism & Spirituality</h2>
+          <p>Theravada Buddhism forms the spiritual foundation of Thai culture, influencing daily life, festivals, and moral values. Temples serve as centers of community and learning.</p>
+        </article>
+
+        <article class="culture-card">
+          <div class="card-icon">🎨</div>
+          <h2>Arts & Architecture</h2>
+          <p>Thai art is renowned for its intricate craftsmanship, from temple murals and sculptures to traditional dance and music. Architecture reflects both Hindu and Buddhist influences.</p>
+        </article>
+
+        <article class="culture-card">
+          <div class="card-icon">🎭</div>
+          <h2>Traditional Performing Arts</h2>
+          <p>Classical dance forms like Khon and Lakhon, along with traditional music, express stories of royal legends and everyday life through graceful movements and melodic sophistication.</p>
+        </article>
+
+        <article class="culture-card">
+          <div class="card-icon">👑</div>
+          <h2>Royal Traditions</h2>
+          <p>Deep reverence for the monarchy permeates Thai culture. Royal ceremonies, traditions, and symbols reflect the central role of the Thai royal family in national identity.</p>
+        </article>
+
+        <article class="culture-card">
+          <div class="card-icon">🍜</div>
+          <h2>Cuisine & Hospitality</h2>
+          <p>Thai cuisine balances sweet, sour, salty, and spicy flavors. Food culture emphasizes communal dining and the warmth of Thai hospitality, a cornerstone of social life.</p>
+        </article>
+
+        <article class="culture-card">
+          <div class="card-icon">🎉</div>
+          <h2>Festivals & Celebrations</h2>
+          <p>From Songkran water festivals to Loy Krathong, Thai celebrations mark seasons, religious occasions, and historical events with vibrant traditions and community participation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="culture-details">
+    <div class="container">
+      <div class="detail-block">
+        <h2>Cultural Values & Beliefs</h2>
+        <p>Thai culture emphasizes several core values that have persisted throughout history: respect for elders and authority, community harmony, and personal dignity. The concept of "sanuk" (fun and enjoyment) and "kreng jai" (considerate deference) guide social interactions. These values, deeply rooted in Buddhist philosophy, shape daily behavior and relationships.</p>
+      </div>
+
+      <div class="detail-block">
+        <h2>Artistic Heritage</h2>
+        <p>From the intricate designs of Thai silk to the precise movements of classical dance, Thai artistic traditions demonstrate extraordinary technical skill and aesthetic refinement. Traditional crafts such as wood carving, lacquerware, and ceramic production continue to thrive, preserving techniques passed down through generations of artisans.</p>
+      </div>
+
+      <div class="detail-block">
+        <h2>Religious Practices</h2>
+        <p>Buddhism permeates Thai life, evident in daily merit-making, annual festivals, and the prominent role of monasteries. Spirit worship coexists harmoniously with Buddhist practice, reflecting Thailand's religious pluralism. Sacred sites and pilgrimage destinations hold special significance in Thai spiritual geography.</p>
+      </div>
+
+      <div class="detail-block">
+        <h2>Contemporary Culture</h2>
+        <p>Modern Thailand balances tradition with globalization. While traditional customs remain vital, contemporary Thai culture embraces technology, popular entertainment, and international influences, creating a dynamic cultural landscape that honors its heritage while engaging with the modern world.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="culture-timeline">
+    <div class="container">
+      <h2>Cultural Evolution Through Periods</h2>
+      <div class="timeline-cards">
+        <div class="timeline-item">
+          <h3>Sukhothai Period (1238-1438)</h3>
+          <p>Foundation of classical Thai culture, art, and literature. Development of Thai script and early temple architecture that defined aesthetic principles.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Ayutthaya Period (1351-1767)</h3>
+          <p>Cultural flourishing with international trade influences. Refinement of court ceremonies, literature, and arts. Peak of Thai architectural and artistic achievement.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Thonburi & Chakri Periods (1768-Present)</h3>
+          <p>Cultural preservation and modernization. Establishment of Bangkok as cultural center. Continuation of traditions with adaptation to contemporary contexts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>History of Thailand</h3>
+        <p>Exploring Thailand's rich cultural heritage and historical journey from ancient kingdoms to modern times.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/history-of-thailand/timeline">Timeline</a></li>
+          <li><a href="/history-of-thailand/periods">Historical Periods</a></li>
+          <li><a href="/history-of-thailand/figures">Influential Figures</a></li>
+          <li><a href="/history-of-thailand/culture">Cultural Heritage</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/history-of-thailand/resources">Learning Resources</a></li>
+          <li><a href="/history-of-thailand/about">About This Site</a></li>
+          <li><a href="/history-of-thailand/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 History of Thailand. All rights reserved.</p>
+    </div>
+  </div>
+</footer></body></html>
