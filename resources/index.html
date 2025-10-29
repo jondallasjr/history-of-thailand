@@ -1,0 +1,945 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Learning Resources</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  color: #e74c3c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #c0392b;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo a:hover {
+  color: #ecf0f1;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* NAVIGATION STYLES */
+.site-nav {
+  background-color: #34495e;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
+}
+
+.nav-link.active {
+  border-bottom-color: #e74c3c;
+  color: #ecf0f1;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background-color: #2c3e50;
+  color: white;
+  margin-top: 60px;
+  padding-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.footer-section p {
+  color: #bdc3c7;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #bdc3c7;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e74c3c;
+}
+
+.footer-bottom {
+  border-top: 1px solid #34495e;
+  padding: 20px 0;
+  text-align: center;
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #34495e;
+  }
+
+  .site-nav.active {
+    max-height: 400px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-link {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .header-container {
+    padding: 12px 15px;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+}
+/* Learning Resources - Page CSS */
+.resources-main {
+  flex: 1;
+}
+
+.resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.resources-hero {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  border-radius: 8px;
+}
+
+.resources-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.resource-category {
+  background: #f9f9f9;
+  border-left: 4px solid #e74c3c;
+  padding: 30px;
+  border-radius: 6px;
+  transition: box-shadow 0.3s ease;
+}
+
+.resource-category:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.resource-category h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resource-item {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #ecf0f1;
+}
+
+.resource-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.resource-item p {
+  color: #555;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.resource-item ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resource-item li {
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.resource-item li:before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.resources-cta {
+  background: linear-gradient(135deg, #ecf0f1 0%, #f9f9f9 100%);
+  padding: 50px 30px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid #bdc3c7;
+}
+
+.resources-cta h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.resources-cta p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #e74c3c;
+}
+
+.cta-button:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(199, 57, 43, 0.3);
+}
+
+@media (max-width: 768px) {
+  .resources-hero {
+    padding: 30px 20px;
+    margin-bottom: 40px;
+  }
+
+  .resources-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .resource-category {
+    padding: 20px;
+  }
+
+  .resource-category h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .resources-cta {
+    padding: 30px 20px;
+  }
+
+  .resources-cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-links {
+    gap: 10px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resources-container {
+    padding: 20px 15px;
+  }
+
+  .resources-hero {
+    padding: 25px 15px;
+    margin-bottom: 30px;
+  }
+
+  .resources-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .resource-category {
+    padding: 15px;
+    border-left-width: 3px;
+  }
+
+  .resource-category h2 {
+    font-size: 1.1rem;
+  }
+
+  .resource-item {
+    padding: 15px;
+  }
+
+  .resource-item h3 {
+    font-size: 1rem;
+  }
+
+  .cta-links {
+    flex-direction: column;
+  }
+
+  .cta-button {
+    width: 100%;
+    display: block;
+  }
+}.resources-main {
+  flex: 1;
+}
+
+.resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.resources-hero {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  border-radius: 8px;
+}
+
+.resources-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.resource-category {
+  background: #f9f9f9;
+  border-left: 4px solid #e74c3c;
+  padding: 30px;
+  border-radius: 6px;
+  transition: box-shadow 0.3s ease;
+}
+
+.resource-category:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.resource-category h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resource-item {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #ecf0f1;
+}
+
+.resource-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.resource-item p {
+  color: #555;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.resource-item ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resource-item li {
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.resource-item li:before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.resources-cta {
+  background: linear-gradient(135deg, #ecf0f1 0%, #f9f9f9 100%);
+  padding: 50px 30px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid #bdc3c7;
+}
+
+.resources-cta h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.resources-cta p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #e74c3c;
+}
+
+.cta-button:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(199, 57, 43, 0.3);
+}
+
+@media (max-width: 768px) {
+  .resources-hero {
+    padding: 30px 20px;
+    margin-bottom: 40px;
+  }
+
+  .resources-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .resource-category {
+    padding: 20px;
+  }
+
+  .resource-category h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .resources-cta {
+    padding: 30px 20px;
+  }
+
+  .resources-cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-links {
+    gap: 10px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resources-container {
+    padding: 20px 15px;
+  }
+
+  .resources-hero {
+    padding: 25px 15px;
+    margin-bottom: 30px;
+  }
+
+  .resources-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .resource-category {
+    padding: 15px;
+    border-left-width: 3px;
+  }
+
+  .resource-category h2 {
+    font-size: 1.1rem;
+  }
+
+  .resource-item {
+    padding: 15px;
+  }
+
+  .resource-item h3 {
+    font-size: 1rem;
+  }
+
+  .cta-links {
+    flex-direction: column;
+  }
+
+  .cta-button {
+    width: 100%;
+    display: block;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/history-of-thailand/">History of Thailand</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header><nav class="site-nav" id="siteNav">
+  <ul class="nav-list">
+    <li><a href="/history-of-thailand/" class="nav-link">Home</a></li>
+    <li><a href="/history-of-thailand/timeline" class="nav-link">Timeline</a></li>
+    <li><a href="/history-of-thailand/periods" class="nav-link">Periods</a></li>
+    <li><a href="/history-of-thailand/figures" class="nav-link">Figures</a></li>
+    <li><a href="/history-of-thailand/culture" class="nav-link">Culture</a></li>
+    <li><a href="/history-of-thailand/resources" class="nav-link">Resources</a></li>
+    <li><a href="/history-of-thailand/about" class="nav-link">About</a></li>
+    <li><a href="/history-of-thailand/contact" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
+<script>
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const siteNav = document.getElementById('siteNav');
+  
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+    });
+  }
+</script><main class="resources-main">
+  <div class="resources-container">
+    <section class="resources-hero">
+      <h1>Learning Resources</h1>
+      <p class="hero-subtitle">Educational materials, references, and tools for studying and understanding Thai history comprehensively.</p>
+    </section>
+
+    <section class="resources-grid">
+      <div class="resource-category">
+        <h2>Books & Publications</h2>
+        <div class="resource-list">
+          <div class="resource-item">
+            <h3>Academic Books</h3>
+            <p>Comprehensive scholarly works covering different periods and aspects of Thai history, culture, and society.</p>
+            <ul>
+              <li>Thai history from prehistoric times to present</li>
+              <li>Biographies of influential figures</li>
+              <li>Cultural and religious studies</li>
+              <li>Economic and political development</li>
+            </ul>
+          </div>
+          <div class="resource-item">
+            <h3>General Overviews</h3>
+            <p>Accessible introductions to Thai history for students and general readers.</p>
+            <ul>
+              <li>Beginner-friendly narratives</li>
+              <li>Illustrated timelines and maps</li>
+              <li>Key events and turning points</li>
+              <li>Cultural context and traditions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h2>Online Resources</h2>
+        <div class="resource-list">
+          <div class="resource-item">
+            <h3>Digital Archives</h3>
+            <p>Access to digitized historical documents, photographs, and manuscripts from Thai institutions.</p>
+            <ul>
+              <li>National Library of Thailand</li>
+              <li>Museum collections</li>
+              <li>University research centers</li>
+              <li>Historical societies</li>
+            </ul>
+          </div>
+          <div class="resource-item">
+            <h3>Educational Websites</h3>
+            <p>Curated online platforms offering interactive learning about Thai history.</p>
+            <ul>
+              <li>Interactive timelines</li>
+              <li>Documentary videos</li>
+              <li>Virtual museum tours</li>
+              <li>Expert lectures and webinars</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h2>Multimedia Resources</h2>
+        <div class="resource-list">
+          <div class="resource-item">
+            <h3>Documentaries</h3>
+            <p>Visual storytelling of Thai historical events and cultural heritage through professional documentaries.</p>
+            <ul>
+              <li>Kingdom chronicles</li>
+              <li>Cultural heritage films</li>
+              <li>Historical reenactments</li>
+              <li>Expert interviews</li>
+            </ul>
+          </div>
+          <div class="resource-item">
+            <h3>Maps & Visualizations</h3>
+            <p>Historical maps showing territorial changes, trade routes, and cultural regions throughout Thai history.</p>
+            <ul>
+              <li>Historical territorial maps</li>
+              <li>Trade and migration routes</li>
+              <li>Archaeological sites</li>
+              <li>Cultural region boundaries</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h2>Research Tools</h2>
+        <div class="resource-list">
+          <div class="resource-item">
+            <h3>Primary Sources</h3>
+            <p>Original historical documents including royal decrees, chronicles, and correspondence.</p>
+            <ul>
+              <li>Thai chronicles and annals</li>
+              <li>Royal documents</li>
+              <li>Foreign accounts and correspondence</li>
+              <li>Archaeological reports</li>
+            </ul>
+          </div>
+          <div class="resource-item">
+            <h3>Bibliography</h3>
+            <p>Comprehensive reference guides and scholarly citations organized by period and topic.</p>
+            <ul>
+              <li>Annotated bibliographies</li>
+              <li>Citation guides</li>
+              <li>Recommended readings by period</li>
+              <li>Academic journal articles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h2>Learning Tools</h2>
+        <div class="resource-list">
+          <div class="resource-item">
+            <h3>Study Guides</h3>
+            <p>Organized learning materials to help students understand key concepts and historical periods.</p>
+            <ul>
+              <li>Period overviews</li>
+              <li>Key figures summaries</li>
+              <li>Important events checklist</li>
+              <li>Discussion questions</li>
+            </ul>
+          </div>
+          <div class="resource-item">
+            <h3>Glossary</h3>
+            <p>Definitions of historical terms, Thai vocabulary, and cultural concepts essential to understanding Thai history.</p>
+            <ul>
+              <li>Historical terminology</li>
+              <li>Thai cultural terms</li>
+              <li>Religious and philosophical concepts</li>
+              <li>Administrative titles and positions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources-cta">
+      <h2>Explore Our Site</h2>
+      <p>Use our main navigation to explore specific periods, influential figures, and cultural heritage topics in depth.</p>
+      <div class="cta-links">
+        <a href="/history-of-thailand/timeline" class="cta-button">View Timeline</a>
+        <a href="/history-of-thailand/periods" class="cta-button">Historical Periods</a>
+        <a href="/history-of-thailand/figures" class="cta-button">Influential Figures</a>
+        <a href="/history-of-thailand/culture" class="cta-button">Cultural Heritage</a>
+      </div>
+    </section>
+  </div>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>History of Thailand</h3>
+        <p>Exploring Thailand's rich cultural heritage and historical journey from ancient kingdoms to modern times.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/history-of-thailand/timeline">Timeline</a></li>
+          <li><a href="/history-of-thailand/periods">Historical Periods</a></li>
+          <li><a href="/history-of-thailand/figures">Influential Figures</a></li>
+          <li><a href="/history-of-thailand/culture">Cultural Heritage</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/history-of-thailand/resources">Learning Resources</a></li>
+          <li><a href="/history-of-thailand/about">About This Site</a></li>
+          <li><a href="/history-of-thailand/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 History of Thailand. All rights reserved.</p>
+    </div>
+  </div>
+</footer></body></html>
