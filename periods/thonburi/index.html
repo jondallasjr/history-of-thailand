@@ -1,0 +1,932 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Thonburi Period</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  color: #e74c3c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #c0392b;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo a:hover {
+  color: #ecf0f1;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* NAVIGATION STYLES */
+.site-nav {
+  background-color: #34495e;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
+}
+
+.nav-link.active {
+  border-bottom-color: #e74c3c;
+  color: #ecf0f1;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background-color: #2c3e50;
+  color: white;
+  margin-top: 60px;
+  padding-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.footer-section p {
+  color: #bdc3c7;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #bdc3c7;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e74c3c;
+}
+
+.footer-bottom {
+  border-top: 1px solid #34495e;
+  padding: 20px 0;
+  text-align: center;
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #34495e;
+  }
+
+  .site-nav.active {
+    max-height: 400px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-link {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .header-container {
+    padding: 12px 15px;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+}
+/* Historical Periods - Page CSS */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.page-intro {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.page-intro h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.periods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.period-card {
+  background: white;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.period-card:hover {
+  border-color: #e74c3c;
+  box-shadow: 0 8px 16px rgba(231, 76, 60, 0.15);
+  transform: translateY(-4px);
+}
+
+.period-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.period-card h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.period-card h2 a {
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.period-card h2 a:hover {
+  color: #e74c3c;
+}
+
+.period-era {
+  font-size: 0.9rem;
+  color: #e74c3c;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.period-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.period-link {
+  display: inline-block;
+  color: #e74c3c;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.period-link:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-color: #e74c3c;
+}
+
+.periods-timeline {
+  background: #f8f9fa;
+  padding: 50px 30px;
+  border-radius: 8px;
+  margin-top: 60px;
+}
+
+.periods-timeline h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.timeline-visual {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-visual::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #bdc3c7;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: 0;
+  text-align: right;
+  margin-right: auto;
+  width: calc(50% - 30px);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: auto;
+  text-align: left;
+  width: calc(50% - 30px);
+}
+
+.timeline-dot {
+  width: 24px;
+  height: 24px;
+  background-color: #e74c3c;
+  border: 4px solid white;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 0 3px #ecf0f1;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.timeline-content p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .page-intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .periods-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .periods-timeline {
+    padding: 40px 20px;
+  }
+
+  .periods-timeline h2 {
+    font-size: 1.6rem;
+  }
+
+  .timeline-visual::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 60px;
+    margin-right: 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  .timeline-dot {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 20px 15px;
+  }
+
+  .page-intro h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .period-card {
+    padding: 20px;
+  }
+
+  .period-icon {
+    font-size: 2.5rem;
+  }
+
+  .periods-timeline {
+    padding: 30px 15px;
+  }
+}
+
+/* Thonburi Period - Page CSS */
+.thonburi-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content-section {
+  margin-bottom: 50px;
+  line-height: 1.8;
+}
+
+.content-section h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 700;
+  border-bottom: 3px solid #e74c3c;
+  padding-bottom: 10px;
+}
+
+.content-section p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.characteristics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.characteristic-item {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+  transition: all 0.3s ease;
+}
+
+.characteristic-item:hover {
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.1);
+  transform: translateY(-2px);
+}
+
+.characteristic-item h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.characteristic-item p {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.achievements-list li {
+  padding: 12px 0 12px 30px;
+  position: relative;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.achievements-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.mini-timeline {
+  margin-top: 30px;
+}
+
+.mini-timeline-item {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ecf0f1;
+  position: relative;
+}
+
+.mini-timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline-year {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e74c3c;
+  min-width: 80px;
+}
+
+.mini-timeline-item p {
+  flex: 1;
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.timeline-section {
+  background: #f8f9fa;
+  padding: 35px;
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .characteristics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-timeline-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .timeline-year {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .characteristic-item,
+  .timeline-section {
+    padding: 20px;
+  }
+
+  .content-section {
+    margin-bottom: 35px;
+  }
+}.thonburi-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content-section {
+  margin-bottom: 50px;
+  line-height: 1.8;
+}
+
+.content-section h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 700;
+  border-bottom: 3px solid #e74c3c;
+  padding-bottom: 10px;
+}
+
+.content-section p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.characteristics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.characteristic-item {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+  transition: all 0.3s ease;
+}
+
+.characteristic-item:hover {
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.1);
+  transform: translateY(-2px);
+}
+
+.characteristic-item h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.characteristic-item p {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.achievements-list li {
+  padding: 12px 0 12px 30px;
+  position: relative;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.achievements-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.mini-timeline {
+  margin-top: 30px;
+}
+
+.mini-timeline-item {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ecf0f1;
+  position: relative;
+}
+
+.mini-timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline-year {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e74c3c;
+  min-width: 80px;
+}
+
+.mini-timeline-item p {
+  flex: 1;
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.timeline-section {
+  background: #f8f9fa;
+  padding: 35px;
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .characteristics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-timeline-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .timeline-year {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .characteristic-item,
+  .timeline-section {
+    padding: 20px;
+  }
+
+  .content-section {
+    margin-bottom: 35px;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/history-of-thailand/">History of Thailand</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header><nav class="site-nav" id="siteNav">
+  <ul class="nav-list">
+    <li><a href="/history-of-thailand/" class="nav-link">Home</a></li>
+    <li><a href="/history-of-thailand/timeline" class="nav-link">Timeline</a></li>
+    <li><a href="/history-of-thailand/periods" class="nav-link">Periods</a></li>
+    <li><a href="/history-of-thailand/figures" class="nav-link">Figures</a></li>
+    <li><a href="/history-of-thailand/culture" class="nav-link">Culture</a></li>
+    <li><a href="/history-of-thailand/resources" class="nav-link">Resources</a></li>
+    <li><a href="/history-of-thailand/about" class="nav-link">About</a></li>
+    <li><a href="/history-of-thailand/contact" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
+<script>
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const siteNav = document.getElementById('siteNav');
+  
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+    });
+  }
+</script><div class="page-container">
+  <div class="page-intro">
+    <h1>Thonburi Period</h1>
+    <p class="intro-text">A brief but pivotal transitional era (1767-1782) of recovery and restoration following the fall of Ayutthaya, led by the military genius and visionary leadership of King Taksin.</p>
+  </div>
+
+  <div class="thonburi-content">
+    <section class="content-section">
+      <h2>Overview</h2>
+      <p>The Thonburi Period represents one of Thailand's most dramatic historical moments—a time when the nation rose from the ashes of destruction. After the fall of Ayutthaya in 1767, Thailand faced potential fragmentation and foreign domination. King Taksin established a new capital at Thonburi (across the river from present-day Bangkok) and embarked on a remarkable military and diplomatic campaign to reunify and restore Thai independence.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>Key Characteristics</h2>
+      <div class="characteristics-grid">
+        <div class="characteristic-item">
+          <h3>Military Revival</h3>
+          <p>King Taksin rapidly rebuilt Thai military forces and expelled foreign invaders, particularly the Burmese armies that had occupied Thai territories.</p>
+        </div>
+        <div class="characteristic-item">
+          <h3>Territorial Reunification</h3>
+          <p>Through strategic campaigns, Taksin reclaimed Thai territories and brought fractured regions under central authority, restoring Thai sovereignty.</p>
+        </div>
+        <div class="characteristic-item">
+          <h3>New Capital</h3>
+          <p>Thonburi served as the capital city for 15 years, strategically positioned on the Chao Phraya River for defense and trade.</p>
+        </div>
+        <div class="characteristic-item">
+          <h3>Cultural Continuity</h3>
+          <p>Despite the turmoil, Thai Buddhist traditions and cultural practices were preserved and continued, maintaining Thai identity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>King Taksin (r. 1767-1782)</h2>
+      <p>Taksin was a military commander of half-Chinese descent who emerged as a national hero. His rapid response to Ayutthaya's fall and his exceptional military tactics saved Thailand from partition and foreign control. Known for his energy and determination, Taksin:</p>
+      <ul class="achievements-list">
+        <li>Expelled Burmese forces from Thai territory within months of Ayutthaya's fall</li>
+        <li>Recaptured lost territories including Sukhothai, Phitsanulok, and Chiang Mai</li>
+        <li>Established diplomatic relations with Laos and Cambodia</li>
+        <li>Began the construction of Thonburi as an administrative center</li>
+        <li>Maintained Buddhist patronage and religious continuity</li>
+      </ul>
+    </section>
+
+    <section class="content-section">
+      <h2>Historical Significance</h2>
+      <p>Though brief, the Thonburi Period was transformative. It demonstrated Thai resilience and adaptability during crisis. The period proved that Thailand could recover from catastrophic defeat through effective leadership and military prowess. King Taksin's success established the foundation for the subsequent Chakri Dynasty, which would rule Thailand into the modern era.</p>
+      <p>The transition from Thonburi to Bangkok (established in 1782 by Chakri Dynasty founders) marked the beginning of Thailand's modern period, making Taksin's reign a crucial bridge between the classical Thai kingdoms and the modern Thai nation-state.</p>
+    </section>
+
+    <section class="content-section timeline-section">
+      <h2>Key Events Timeline</h2>
+      <div class="mini-timeline">
+        <div class="mini-timeline-item">
+          <span class="timeline-year">1767</span>
+          <p>Fall of Ayutthaya; Taksin escapes and gathers forces; establishes Thonburi as new capital</p>
+        </div>
+        <div class="mini-timeline-item">
+          <span class="timeline-year">1767-1770</span>
+          <p>Military campaigns to expel Burmese and unify Thai territories</p>
+        </div>
+        <div class="mini-timeline-item">
+          <span class="timeline-year">1770-1776</span>
+          <p>Consolidation of power; campaigns in Laos and Cambodia</p>
+        </div>
+        <div class="mini-timeline-item">
+          <span class="timeline-year">1776-1782</span>
+          <p>Period of relative stability; internal development of Thonburi</p>
+        </div>
+        <div class="mini-timeline-item">
+          <span class="timeline-year">1782</span>
+          <p>Chakri takes power; establishes Bangkok as new capital; Thonburi Period ends</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>History of Thailand</h3>
+        <p>Exploring Thailand's rich cultural heritage and historical journey from ancient kingdoms to modern times.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/history-of-thailand/timeline">Timeline</a></li>
+          <li><a href="/history-of-thailand/periods">Historical Periods</a></li>
+          <li><a href="/history-of-thailand/figures">Influential Figures</a></li>
+          <li><a href="/history-of-thailand/culture">Cultural Heritage</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/history-of-thailand/resources">Learning Resources</a></li>
+          <li><a href="/history-of-thailand/about">About This Site</a></li>
+          <li><a href="/history-of-thailand/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 History of Thailand. All rights reserved.</p>
+    </div>
+  </div>
+</footer></body></html>
